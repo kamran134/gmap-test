@@ -1,0 +1,24 @@
+<p>map works!</p>
+<h1>How to Integrate Google Maps in Angular 16 - ItSolutionStuff.com</h1>
+  
+<google-map height="500px"
+            width="900px"
+            [center]="center"
+            [zoom]="zoom"
+            [title]="title"
+            [lang]="lang"
+            
+            (mapClick)="moveMap($event)"
+            (mapMousemove)="move($event)">
+            <map-advanced-marker [position]="{ lat: agdamLocations[0].lat, lng: agdamLocations[0].lng}" />
+            <!-- @for (location of fuzuliLocations; track location) {
+                <map-advanced-marker
+                    #markerElem="mapAdvancedMarker"
+                    [position]="{ lat: location.lat, lng: location.lng }"
+                />
+            } -->
+</google-map>
+
+  
+<div>Latitude: {{display?.lat}}</div>
+<div>Longitude: {{display?.lng}}</div>
