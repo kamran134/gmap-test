@@ -1,29 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import { GoogleMap, MapKmlLayer, MapMarker } from '@angular/google-maps';
 
 @Component({
     selector: 'app-map',
     templateUrl: './map.component.html',
-    styleUrl: './map.component.css'
+    styleUrl: './map.component.css',
+    standalone: true,
+    imports: [GoogleMap, MapKmlLayer, MapMarker]
 })
 export class MapComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void { }
 
+    imgUrl: string = 'assets/azeri.jpg';
     display: any;
     center: google.maps.LatLngLiteral = {
         lat: 39.602,
         lng: 47.152
     };
+    kmlFuzuli = 'assets/Fuzuli_BasPlan/doc.kml';
     zoom = 15;
     title = 'Füzuli';
     lang = 'az';
 
     fuzuliLocations: any[] = [
         { lat: 39.602, lng: 47.152 },
-        { lat: 39.612, lng: 47.152 },
-        { lat: 39.622, lng: 47.152 },
+        { lat: 39.603, lng: 47.152 },
+        { lat: 39.604, lng: 47.152 },
     ];
+    
     agdamLocations: any[] = [
         { lat: -31.56391, lng: 147.154312 },
         { lat: -33.718234, lng: 150.363181 },
